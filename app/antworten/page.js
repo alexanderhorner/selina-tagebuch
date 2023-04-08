@@ -3,22 +3,30 @@ import { useState, useEffect } from "react";
 import { questions } from "@/components/QuestionList"; // Import the questions array from your index.js file
 
 function AllQuestionsAndAnswers({ answers }) {
+  const sortedDates = Object.keys(answers).sort((a, b) => new Date(b) - new Date(a));
+
   return (
     <div>
-      {Object.keys(answers).map((date) => (
-        <div key={date} className="mb-4">
-          <h2 className="text-xl font-bold mb-2">{date}</h2>
-          {answers[date].map((answer, index) => (
-            <div key={index} className="mb-2">
-              <h3 className="font-bold text-indigo-100">{questions[index].question}</h3>
-              <div>{answer}</div>
-            </div>
-          ))}
+      {sortedDates.map((date) => (
+        <div key={date} className="mb-11">
+          <h2 className="font-bold text-2xl text-indigo-300 mb-2">{date}</h2>
+          {answers[date].map((answer, index) => {
+            if (answer.trim() === "") {
+              return null;
+            }
+            return (
+              <div key={index} className="mb-3 p-4 rounded-lg bg-slate-900">
+                <h3 className="font-bold text-lg text-indigo-100 mb-1">{questions[index].question}</h3>
+                <div className="text-indigo-200">{answer}</div>
+              </div>
+            );
+          })}
         </div>
       ))}
     </div>
   );
 }
+
 
 export default function AntwortenPage() {
   const [answers, setAnswers] = useState({});
@@ -32,7 +40,7 @@ export default function AntwortenPage() {
 
   return (
     <div className="container mx-auto px-4 py-5 max-h-full overflow-auto">
-      <h1 className="text-3xl font-bold mb-4">Alle Fragen und Antworten</h1>
+      <h1 className="text-4xl font-bold mb-11">Alle Fragen und Antworten:</h1>
       <AllQuestionsAndAnswers answers={answers} />
     </div>
   );

@@ -15,19 +15,19 @@ export const questions = [
     }
   },
   {
-    question: "Hast du irgendetwas spannendes gesehen",
+    question: "Hast du irgendetwas spannendes gesehen?",
     answer: {
       type: "text"
     }
   },
   {
-    question: "Ist dir irgendwas lustiges passiert",
+    question: "Ist dir irgendwas lustiges passiert?",
     answer: {
       type: "text"
     }
   },
   {
-    question: "Hast du einen neuen Menschen kennengelernt",
+    question: "Hast du einen neuen Menschen kennengelernt?",
     answer: {
       type: "text"
     }
@@ -39,35 +39,18 @@ export const questions = [
     }
   },
   {
-    question: "hast du etwas über dich selbst gelernt",
+    question: "Hast du etwas über dich selbst gelernt?",
     answer: {
       type: "text"
     }
   },
   {
-    question: "hast du etwas über dich selbst gelernt",
+    question: "Hast du etwas über dich selbst gelernt?",
     answer: {
       type: "text"
     }
   },
 ]
-
-// import firebase from "firebase/app";
-// import "firebase/firestore";
-
-// // TODO: Replace the following with your app's Firebase project configuration
-// // See: https://support.google.com/firebase/answer/7015592
-// const firebaseConfig = {
-//     FIREBASE_CONFIGURATION
-// };
-
-// // Initialize Firebase
-// firebase.initializeApp(firebaseConfig);
-
-
-// // Initialize Cloud Firestore and get a reference to the service
-// const db = firebase.firestore();
-
 
 // DaySelector component
 function DaySelector({ currentDate, setCurrentDate }) {
@@ -79,12 +62,12 @@ function DaySelector({ currentDate, setCurrentDate }) {
   };
 
   return (
-    <div className="flex gap-4 items-center">
+    <div className="grid grid-cols-[1fr_min-content_1fr] gap-4">
       <button 
         className="bg-indigo-500 hover:bg-indigo-700 disabled:opacity-70 disabled:bg-indigo-500 transition-colors text-white font-bold py-2 px-4 rounded"
         onClick={() => changeDate(-1)}
       >Zurück</button>
-      <div>{currentDate}</div>
+      <div className="whitespace-nowrap self-center">{currentDate}</div>
       <button 
         className="bg-indigo-500 hover:bg-indigo-700 disabled:opacity-70 disabled:bg-indigo-500 transition-colors text-white font-bold py-2 px-4 rounded"
         disabled={ currentDate === new Date().toISOString().substring(0, 10)}
@@ -137,16 +120,16 @@ export default function QuestionList() {
         onInputChange={(value) => handleInputChange(questionIndex, value)}
       />
 
-      <div className="flex flex-wrap gap-4">
+      <div className="grid grid-cols-2 gap-4">
         <button
-          className="bg-indigo-500 hover:bg-indigo-700 disabled:opacity-70 disabled:bg-indigo-500 transition-colors text-white font-bold py-2 px-4 rounded"
+          className="whitespace-nowrap bg-indigo-500 hover:bg-indigo-700 disabled:opacity-70 disabled:bg-indigo-500 transition-colors text-white font-bold py-2 px-4 rounded"
           onClick={() => setQuestionIndex(questionIndex - 1)}
           disabled={questionIndex === 0}
         >
           Vorherige Frage
         </button>
         <button
-          className="bg-indigo-500 hover:bg-indigo-700 disabled:opacity-70 disabled:bg-indigo-500 transition-colors text-white font-bold py-2 px-4 rounded"
+          className="whitespace-nowrap bg-indigo-500 hover:bg-indigo-700 disabled:opacity-70 disabled:bg-indigo-500 transition-colors text-white font-bold py-2 px-4 rounded"
           onClick={() => setQuestionIndex(questionIndex + 1)}
           disabled={questionIndex === questions.length - 1}
         >
@@ -175,7 +158,7 @@ function Answer({ answer, inputValue, onInputChange }) {
   if (answer.type === "text") {
     return (
       <input
-        className="border border-gray-300 rounded-md px-3 py-2 max-w-full w-[400px] text-black"
+        className="border border-gray-300 rounded-md px-3 py-2 w-full max-w-[400px] mx-3 text-black"
         type="text"
         value={inputValue}
         onChange={handleChange}
@@ -183,14 +166,25 @@ function Answer({ answer, inputValue, onInputChange }) {
     );
   } else if (answer.type === "oneToTen") {
     return (
-      <input
-        className="border border-gray-300 rounded-md px-3 py-2 w-25 text-black"
-        type="number"
-        min="1"
-        max="10"
-        value={inputValue}
-        onChange={handleChange}
-      />
+      <div className="flex items-center">
+        <input
+          className="w-25 text-indigo-500 appearance-none h-1 rounded-md outline-none"
+          type="range"
+          min="1"
+          max="10"
+          value={inputValue}
+          onChange={handleChange}
+          style={{
+            background:
+              "linear-gradient(to right, #4f46e5 0%, #4f46e5 " +
+              ((inputValue - 1) * 100) / 9 +
+              "%, #ffffff " +
+              ((inputValue - 1) * 100) / 9 +
+              "%, #ffffff 100%)",
+          }}
+        />
+        <span className="w-8 ml-2">{inputValue}</span>
+      </div>
     );
   } else {
     return <div>Unbekannter Antworttyp</div>;
