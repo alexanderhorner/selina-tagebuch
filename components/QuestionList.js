@@ -121,7 +121,7 @@ export default function QuestionList() {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center gap-3 translate-y-14">
+    <div className="flex flex-col justify-center items-center gap-3 -translate-y-[10%]">
 
       <DaySelector currentDate={currentDate} setCurrentDate={setCurrentDate} />
 
