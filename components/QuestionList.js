@@ -121,9 +121,9 @@ export default function QuestionList() {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center gap-3">
+    <div className="flex flex-col justify-center items-center gap-3 translate-y-14">
 
-    <DaySelector currentDate={currentDate} setCurrentDate={setCurrentDate} />
+      <DaySelector currentDate={currentDate} setCurrentDate={setCurrentDate} />
 
       <Question
         question={questions[questionIndex].question}

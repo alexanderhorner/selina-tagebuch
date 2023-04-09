@@ -1,19 +1,19 @@
 {
-  "name": "Selinas Tagebuch",
-  "short_name": "Tagebuch",
-  "icons": [
-    {
-      "src": "/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ],
-  "theme_color": "#6366f1",
-  "background_color": "#6366f1",
-  "display": "standalone"
+    "name": "Tagebuch",
+    "short_name": "Tagebuch",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#1e313b",
+    "background_color": "#1e313b",
+    "display": "standalone"
 }
