@@ -1,6 +1,8 @@
 "use client"
-import { useState, useEffect } from "react";
-import { questions } from "@/components/QuestionList"; // Import the questions array from your index.js file
+import { useState, useEffect } from "react"
+import { questions } from "@/components/QuestionList"
+import Link from 'next/link'
+
 
 function AllQuestionsAndAnswers({ answers }) {
   const sortedDates = Object.keys(answers).sort((a, b) => new Date(b) - new Date(a));
@@ -17,7 +19,14 @@ function AllQuestionsAndAnswers({ answers }) {
             return (
               <div key={index} className="mb-3 p-4 rounded-lg bg-slate-900">
                 <h3 className="font-bold text-lg text-indigo-100 mb-1">{questions[index].question}</h3>
-                <div className="text-indigo-200">{answer}</div>
+                <div className="text-indigo-200">
+                  {questions[index].answer.type === "oneToTen"
+                    ? `${answer} von 10`
+                    : answer}
+                </div>
+                <Link href={{ pathname: "/", query: { date, questionIndex: index } }}>
+                  <button className="mt-2 text-indigo-300 hover:text-indigo-500 transition-colors">Bearbeiten</button>
+                </Link>
               </div>
             );
           })}
@@ -26,6 +35,7 @@ function AllQuestionsAndAnswers({ answers }) {
     </div>
   );
 }
+
 
 
 export default function AntwortenPage() {

@@ -1,5 +1,4 @@
 import QuestionList from '@/components/QuestionList';
-import Head from 'next/head';
 
 // Page component that shows one question after another at random
 export default function Page() {
