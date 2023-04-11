@@ -17,6 +17,11 @@ function Navbar() {
             Alle Antworten
           </Link>
         </li>
+        <li>
+          <Link href="/share" className="text-white font-semibold text-lg hover:opacity-70 transition-opacity whitespace-nowrap">
+            Teilen
+          </Link>
+        </li>
       </ul>
     </nav>
   );

@@ -45,12 +45,6 @@ export const questions = [
       type: "text"
     }
   },
-  {
-    question: "Hast du etwas über dich selbst gelernt?",
-    answer: {
-      type: "text"
-    }
-  },
 ]
 
 // DaySelector component
