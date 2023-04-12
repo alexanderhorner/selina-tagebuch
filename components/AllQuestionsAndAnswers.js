@@ -10,7 +10,7 @@ export default function AllQuestionsAndAnswers({ answers }) {
         <div key={date} className="mb-11">
           <h2 className="font-bold text-2xl text-indigo-300 mb-2">{date}</h2>
           {answers[date].map((answer, index) => {
-            if (answer.trim() === "") {
+            if (!answer || answer?.trim() === "") {
               return null;
             }
             return (

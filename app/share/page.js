@@ -22,7 +22,7 @@ export default function SharePage() {
     sortedDates.forEach((date) => {
       formattedText += `${date}\n`;
       answers[date].forEach((answer, index) => {
-        if (answer.trim() === "") {
+        if (!answer || answer?.trim() === "") {
           return;
         }
         formattedText += `${questions[index]?.question || "[Gelöschte Frage]"}: `;
