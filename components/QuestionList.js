@@ -45,12 +45,23 @@ export const questions = [
       type: "text"
     }
   },
+  // {
+  //   question: "Test?",
+  //   answer: {
+  //     type: "oneToTen"
+  //   }
+  // },
+  // {
+  //   question: "Test?",
+  //   answer: {
+  //     type: "text"
+  //   }
+  // },
 ]
 
 // DaySelector component
 function DaySelector({ currentDate, setCurrentDate }) {
   const changeDate = (days) => {
-    console.log(days);
     const newDate = new Date(currentDate);
     newDate.setUTCDate(newDate.getUTCDate() + days);
     setCurrentDate(newDate.toISOString().substring(0, 10));

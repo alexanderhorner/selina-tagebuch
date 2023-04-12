@@ -25,9 +25,9 @@ export default function SharePage() {
         if (answer.trim() === "") {
           return;
         }
-        formattedText += `${questions[index].question}: `;
+        formattedText += `${questions[index]?.question || "[Gelöschte Frage]"}: `;
         formattedText +=
-          questions[index].answer.type === "oneToTen"
+          questions[index]?.answer.type === "oneToTen"
             ? `${answer} von 10\n`
             : `${answer}\n`;
       });

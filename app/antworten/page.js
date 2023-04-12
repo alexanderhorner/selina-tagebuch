@@ -1,11 +1,13 @@
 "use client"
 import { useState, useEffect } from "react"
 import AllQuestionsAndAnswers from "@/components/AllQuestionsAndAnswers"
+// import exampleData from "./exampleData.json"
 
 export default function AntwortenPage() {
   const [answers, setAnswers] = useState({});
 
   useEffect(() => {
+    // localStorage.setItem("answers", JSON.stringify(exampleData));
     const storedAnswers = localStorage.getItem("answers");
     if (storedAnswers) {
       setAnswers(JSON.parse(storedAnswers));

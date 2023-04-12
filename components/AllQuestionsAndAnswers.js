@@ -15,9 +15,9 @@ export default function AllQuestionsAndAnswers({ answers }) {
             }
             return (
               <div key={index} className="mb-3 p-4 rounded-lg bg-slate-900">
-                <h3 className="font-bold text-lg text-indigo-100 mb-1">{questions[index].question}</h3>
+                <h3 className="font-bold text-lg text-indigo-100 mb-1">{questions[index]?.question || '[Gelöschte Frage]'}</h3>
                 <div className="text-indigo-200">
-                  {questions[index].answer.type === "oneToTen"
+                  {questions[index]?.answer.type === "oneToTen"
                     ? `${answer} von 10`
                     : answer}
                 </div>
