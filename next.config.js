@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 
-const withPWA = require('next-pwa')({
-  scrope: '/',
+const withPWA = require("@ducanh2912/next-pwa").default({
+  dest: 'public',
+  // scope: '/',
   reloadOnOnline: false
 })
 

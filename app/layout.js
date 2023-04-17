@@ -4,6 +4,12 @@ import Navbar from '@/components/Navbar'
 export const metadata = {
   title: 'Selinas Tagebuch',
   description: 'Ein Urlaubstagebuch für meine Freundin Selina.',
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: 'Selinas Tagebuch',
+  },
 }
  
 export default function RootLayout({ children }) {
