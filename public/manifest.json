@@ -14,6 +14,7 @@
         }
     ],
     "start_url": "/",
+    "scope": "/",
     "description": "Ein Tagebuch für Selina",
     "orientation": "portrait",
     "theme_color": "#6366f1",
