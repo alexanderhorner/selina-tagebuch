@@ -1,5 +1,4 @@
 import '@/styles/globals.css'
-import Head from 'next/head';
 import Navbar from '@/components/Navbar'
 
 export const metadata = {
@@ -10,7 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
  return (
     <html lang="de" className="h-full bg-slate-500">
-      <Head>
+      <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -20,7 +19,7 @@ export default function RootLayout({ children }) {
         <meta name="application-name" content="Tagebuch" />
         <meta name="msapplication-TileColor" content="#1e313b" />
         <meta name="theme-color" content="#1e313b" />
-      </Head>
+      </head>
       <body className="bg-slate-800 text-slate-50 flex flex-col h-full">
         <Navbar />
 

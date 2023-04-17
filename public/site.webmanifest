@@ -1,5 +1,5 @@
 {
-    "name": "Tagebuch",
+    "name": "Selinas Tagebuch",
     "short_name": "Tagebuch",
     "icons": [
         {
@@ -13,7 +13,10 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#1e313b",
+    "start_url": "/",
+    "description": "Ein Tagebuch für Selina",
+    "orientation": "portrait",
+    "theme_color": "#6366f1",
     "background_color": "#1e313b",
-    "display": "standalone"
+    "display": "fullscreen"
 }
