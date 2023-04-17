@@ -11,6 +11,13 @@ export const metadata = {
     statusBarStyle: "default",
     title: 'Selinas Tagebuch',
   },
+  // viewport: {
+  //   'viewport-fit': 'cover',
+  //   width: 'device-width',
+  //   initialScale: 1,
+  //   maximumScale: 1,
+  // },
+  viewport: "viewport-fit=cover, width=device-width, initial-scale=1, maximum-scale=1"
 }
  
 export default function RootLayout({ children }) {
@@ -26,6 +33,7 @@ export default function RootLayout({ children }) {
         <meta name="application-name" content="Tagebuch" />
         <meta name="msapplication-TileColor" content="#1e313b" />
         <meta name="theme-color" content="#1e313b" />
+        {/* <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1, maximum-scale=1" /> */}
       </head>
       <body className="bg-slate-800 text-slate-50 flex flex-col h-full">
         <Navbar />

@@ -2,7 +2,7 @@ import RouteAwareLink from './RouteAwareLink'
 
 export default function BottomNav() {
   return (
-    <nav className="bg-indigo-500 h-14 shrink-0 sm:hidden">
+    <nav className="bg-indigo-500 h-[calc(3.5rem+env(safe-area-inset-bottom))] pb-[env(safe-area-inset-bottom)] shrink-0 sm:hidden">
       <ul className="flex justify-around items-center gap-4 sm:gap-4 px-4 h-full overflow-x-auto">
         <li>
           <RouteAwareLink href="/" className="text-white font-bold text-lg hover:opacity-70 transition-opacity whitespace-nowrap">
