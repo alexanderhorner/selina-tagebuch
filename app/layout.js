@@ -1,5 +1,6 @@
 import '@/styles/globals.css'
 import Navbar from '@/components/Navbar'
+import BottomNav from '@/components/BottomNav'
 
 export const metadata = {
   title: 'Selinas Tagebuch',
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
 
         {children}
 
+        <BottomNav />
         
       </body>
     </html>

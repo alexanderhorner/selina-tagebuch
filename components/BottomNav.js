@@ -1,23 +1,20 @@
-import RouteAwareLink from '@/components/RouteAwareLink'
+import RouteAwareLink from './RouteAwareLink'
 
-function Navbar() {
+export default function BottomNav() {
   return (
-    <nav className="bg-indigo-500 h-14 shrink-0">
-      <ul className="flex justify-center sm:justify-start items-center gap-4 sm:gap-4 px-4 h-full overflow-x-auto">
-        <li className="whitespace-nowrap font-bold text-xl">
-          Selinas Tagebuch
-        </li>
-        <li className="hidden sm:block">
+    <nav className="bg-indigo-500 h-14 shrink-0 sm:hidden">
+      <ul className="flex justify-around items-center gap-4 sm:gap-4 px-4 h-full overflow-x-auto">
+        <li>
           <RouteAwareLink href="/" className="text-white font-bold text-lg hover:opacity-70 transition-opacity whitespace-nowrap">
             Fragen
           </RouteAwareLink>
         </li>
-        <li className="hidden sm:block">
+        <li>
           <RouteAwareLink href="/antworten" className="text-white font-semibold text-lg hover:opacity-70 transition-opacity whitespace-nowrap">
             Alle Antworten
           </RouteAwareLink>
         </li>
-        <li className="hidden sm:block">
+        <li>
           <RouteAwareLink href="/share" className="text-white font-semibold text-lg hover:opacity-70 transition-opacity whitespace-nowrap">
             Teilen
           </RouteAwareLink>
@@ -26,5 +23,3 @@ function Navbar() {
     </nav>
   );
 }
-
-export default Navbar;
