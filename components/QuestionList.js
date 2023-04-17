@@ -45,30 +45,6 @@ export const questions = [
       type: "text"
     }
   },
-  {
-    question: "Test?",
-    answer: {
-      type: "oneToTen"
-    }
-  },
-  {
-    question: "Test?",
-    answer: {
-      type: "text"
-    }
-  },
-  {
-    question: "Test?",
-    answer: {
-      type: "oneToTen"
-    }
-  },
-  {
-    question: "Test?",
-    answer: {
-      type: "text"
-    }
-  },
 ]
 
 // DaySelector component
