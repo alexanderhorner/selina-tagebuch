@@ -60,12 +60,12 @@ function DaySelector({ currentDate, setCurrentDate }) {
   return (
     <div className="grid grid-cols-[1fr_min-content_1fr] gap-4">
       <button 
-        className="bg-indigo-500 hover:bg-indigo-700 disabled:opacity-70 disabled:bg-indigo-500 transition-colors text-white font-bold py-2 px-4 rounded"
+        className="bg-indigo-500 active:bg-indigo-700 disabled:opacity-70 disabled:bg-indigo-500 transition-colors text-white font-bold py-2 px-4 rounded"
         onClick={() => changeDate(-1)}
       >Zurück</button>
       <div className="whitespace-nowrap self-center">{currentDate}</div>
       <button 
-        className="bg-indigo-500 hover:bg-indigo-700 disabled:opacity-70 disabled:bg-indigo-500 transition-colors text-white font-bold py-2 px-4 rounded"
+        className="bg-indigo-500 active:bg-indigo-700 disabled:opacity-70 disabled:bg-indigo-500 transition-colors text-white font-bold py-2 px-4 rounded"
         disabled={ currentDate === new Date().toISOString().substring(0, 10)}
         onClick={() =>  changeDate(+1)}
       >Vor</button>
@@ -132,14 +132,14 @@ export default function QuestionList() {
 
       <div className="grid grid-cols-2 gap-4">
         <button
-          className="whitespace-nowrap bg-indigo-500 hover:bg-indigo-700 disabled:opacity-70 disabled:bg-indigo-500 transition-colors text-white font-bold py-2 px-4 rounded"
+          className="whitespace-nowrap bg-indigo-500 active:bg-indigo-700 disabled:opacity-70 disabled:bg-indigo-500 transition-colors text-white font-bold py-2 px-4 rounded"
           onClick={() => _setQuestionIndex(questionIndex - 1)}
           disabled={questionIndex === 0}
         >
           Vorherige Frage
         </button>
         <button
-          className="whitespace-nowrap bg-indigo-500 hover:bg-indigo-700 disabled:opacity-70 disabled:bg-indigo-500 transition-colors text-white font-bold py-2 px-4 rounded"
+          className="whitespace-nowrap bg-indigo-500 active:bg-indigo-700 disabled:opacity-70 disabled:bg-indigo-500 transition-colors text-white font-bold py-2 px-4 rounded"
           onClick={() => _setQuestionIndex(questionIndex + 1)}
           disabled={questionIndex === questions.length - 1}
         >
