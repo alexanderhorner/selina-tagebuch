@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
         <meta name="theme-color" content="#1e313b" />
         {/* <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1, maximum-scale=1" /> */}
       </head>
-      <body className="bg-slate-800 text-slate-50 flex flex-col h-full">
+      <body ontouchstart="" className="bg-slate-800 text-slate-50 flex flex-col h-full">
         <Navbar />
 
         {children}
