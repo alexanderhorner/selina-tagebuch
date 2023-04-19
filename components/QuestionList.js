@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from "react"
-import { useRouter, useSearchParams } from "next/navigation"
+import { useSearchParams } from "next/navigation"
 
 export const questions = [
   {
@@ -93,8 +93,19 @@ export default function QuestionList() {
   }, []);
 
   useEffect(() => {
-    setQuestionIndex(parseInt(queries.questionIndex) || 0);
-    setCurrentDate(queries.date || new Date().toISOString().substring(0, 10));
+    // check if questionindex is as long as questions array
+    if ((parseInt(queries.questionIndex) || 0) <= questions.length-1) {
+      setQuestionIndex(parseInt(queries.questionIndex) || 0)
+    } else {
+      console.error('query questionIndex is longer than questions array')
+    }
+
+    // check if date is today or earlier
+    if ((queries.date || new Date().toISOString().substring(0, 10)) <= new Date().toISOString().substring(0, 10)) {
+      setCurrentDate(queries.date || new Date().toISOString().substring(0, 10))
+    } else {
+      console.error('query date is later than today')
+    }
   }, []);
 
   const handleInputChange = (index, value) => {
