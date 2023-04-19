@@ -49,14 +49,14 @@ export default function ImportPage() {
           placeholder="Antworten im JSON Format hier einfügen..."
         ></textarea>
         <button
-          className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-indigo-500 active:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
           onClick={importAnswers}
         >
           Importieren
         </button>
         <h2 className="mb-2 mt-5 text-2xl">Vorschau</h2>
         <button
-          className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-indigo-500 active:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
           onClick={showVorschau}
         >
           Anzeigen

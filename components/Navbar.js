@@ -8,17 +8,17 @@ function Navbar() {
           Selinas Tagebuch
         </li>
         <li className="hidden sm:block">
-          <RouteAwareLink href="/" className="text-white font-bold text-lg hover:opacity-70 transition-opacity whitespace-nowrap">
+          <RouteAwareLink href="/" className="text-white font-bold text-lg transition-opacity whitespace-nowrap">
             Fragen
           </RouteAwareLink>
         </li>
         <li className="hidden sm:block">
-          <RouteAwareLink href="/antworten" className="text-white font-semibold text-lg hover:opacity-70 transition-opacity whitespace-nowrap">
+          <RouteAwareLink href="/antworten" className="text-white font-semibold text-lg transition-opacity whitespace-nowrap">
             Alle Antworten
           </RouteAwareLink>
         </li>
         <li className="hidden sm:block">
-          <RouteAwareLink href="/share" className="text-white font-semibold text-lg hover:opacity-70 transition-opacity whitespace-nowrap">
+          <RouteAwareLink href="/share" className="text-white font-semibold text-lg transition-opacity whitespace-nowrap">
             Teilen
           </RouteAwareLink>
         </li>

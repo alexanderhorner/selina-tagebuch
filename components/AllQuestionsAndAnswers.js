@@ -22,7 +22,7 @@ export default function AllQuestionsAndAnswers({ answers }) {
                     : answer}
                 </div>
                 <Link href={{ pathname: "/", query: { date, questionIndex: index } }}>
-                  <button className="mt-2 text-indigo-300 hover:text-indigo-500 transition-colors">Bearbeiten</button>
+                  <button className="mt-2 text-indigo-300 transition-colors">Bearbeiten</button>
                 </Link>
               </div>
             );

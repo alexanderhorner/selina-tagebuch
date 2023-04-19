@@ -69,13 +69,13 @@ export default function SharePage() {
     <div className="flex flex-col items-center justify-center h-full">
       <h1 className="text-2xl mb-4">Teile deine Antworten</h1>
       <button
-        className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded mb-4"
+        className="bg-indigo-500 active:bg-indigo-700 text-white font-bold py-2 px-4 rounded mb-4"
         onClick={shareAnswers}
       >
         Teilen
       </button>
       <button
-        className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
+        className="bg-indigo-500 active:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
         onClick={downloadAnswers}
       >
         Herunterladen
